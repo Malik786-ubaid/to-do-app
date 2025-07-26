@@ -1,3 +1,4 @@
+// Function to handle adding tasks
 function addTask() {
   let input = document.getElementById("task-input");
   let taskText = input.value.trim();
