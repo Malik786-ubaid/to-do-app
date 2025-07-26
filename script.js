@@ -7,11 +7,14 @@ function addTask() {
     li.textContent = taskText;
     document.getElementById("task-list").appendChild(li);
     input.value = "";
-    document.getElementById("task-input").addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    addTask();
-  }
-});
-
   }
 }
+
+// Add "Enter key" support once DOM is loaded
+window.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("task-input").addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      addTask();
+    }
+  });
+});
